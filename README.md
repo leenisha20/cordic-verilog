@@ -1,6 +1,6 @@
 # CORDIC Core in Verilog
 
-A fixed-point CORDIC (COordinate Rotation DIgital Computer) core that computes sine, cosine, magnitude and angle using only shifts and adds, with no multipliers.
+A fixed-point CORDIC (COordinate Rotation DIgital Computer) core that computes sine, cosine, magnitude and angle using only shifts and adds in the iteration stages (vectoring mode has one constant multiply at the end for gain correction).
 
 ## Features
 - Combinational rotation mode (`rtl/cordic_core.v`)
