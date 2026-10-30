@@ -37,3 +37,8 @@ A new angle is accepted every clock cycle. Results appear 15 cycles later (laten
 
 ## Tools
 Icarus Verilog, GTKWave, Python 3
+
+## Latency waveform
+The first valid input enters at 30 ns and the first valid output appears at 175 ns (15 clock cycles). After that, one result comes out every clock.
+
+![Pipeline latency waveform](docs/latency.png)
