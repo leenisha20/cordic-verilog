@@ -2,3 +2,4 @@
 *.out
 *.vvp
 __pycache__/
+*.gtkw

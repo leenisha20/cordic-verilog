@@ -8,6 +8,8 @@ module tb_cordic;
     cordic_core #(.W(16), .N(14)) dut (.angle(angle), .cos_out(c), .sin_out(s));
 
     initial begin
+        $dumpfile("cordic.vcd");
+        $dumpvars(0, tb_cordic);
         for (deg = -90; deg <= 90; deg = deg + 15) begin
             rad   = deg * 3.14159265358979 / 180.0;
             angle = $rtoi(rad * 16384.0);
