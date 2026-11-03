@@ -43,12 +43,3 @@ The first valid input enters at 30 ns and the first valid output appears at 175 
 
 ![Pipeline latency waveform](docs/latency.png)
 
-## Latency waveform
-The first valid input enters the pipeline at about 35 ns, and the first valid output appears about 15 clock cycles later, at about 175 ns. After that, one result comes out on every clock.
-
-![Pipeline latency waveform](docs/latency.png)
-
-## Latency waveform
-The first valid input enters the pipeline at about 35 ns, and the first valid output appears about 15 clock cycles later, at about 175 ns. After that, one result comes out on every clock.
-
-![Pipeline latency waveform](docs/latency.png)
