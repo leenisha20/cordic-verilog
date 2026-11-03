@@ -2,6 +2,13 @@
 
 A fixed-point CORDIC (COordinate Rotation DIgital Computer) core that computes sine, cosine, magnitude and angle using only shifts and adds in the iteration stages (vectoring mode has one constant multiply at the end for gain correction).
 
+## Summary
+- Three working CORDIC variants: combinational rotation, pipelined rotation (one result per clock, 15-cycle latency) and vectoring (magnitude and angle).
+- 16-bit fixed point (Q2.14), 14 iterations, shift-and-add stages.
+- Accuracy: rotation worst error 0.00027; vectoring worst magnitude error 0.0002 and worst angle error 0.012 degrees.
+- Self-checking: `bash run.sh test` runs all testbenches and compares the results with Python's math library.
+- Verified in simulation (Icarus Verilog and GTKWave). Not yet synthesized or run on an FPGA.
+
 ## Features
 - Combinational rotation mode (`rtl/cordic_core.v`)
 - Pipelined rotation mode, one result per clock (`rtl/cordic_pipe.v`)
