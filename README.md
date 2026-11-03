@@ -43,3 +43,14 @@ The first valid input enters at 30 ns and the first valid output appears at 175 
 
 ![Pipeline latency waveform](docs/latency.png)
 
+
+## Sensor front end (CORDIC to spectrum sensor)
+
+`rtl/sensor_cordic.v` connects two unsigned 16-bit sensor channels to the vectoring core. The channels are scaled down by 8 so the CORDIC never overflows, and the output is a registered magnitude and angle with a valid flag.
+
+- Angle = atan2(ch_b, ch_a). It depends only on the ratio of the two channels, so the scaling does not affect it.
+- Magnitude = sqrt(a^2 + b^2) / 8.
+- Tested in simulation with 10 sensor-style readings (`tb/tb_sensor.v`). Worst magnitude error is 0.0002 and worst angle error is 0.022 degrees.
+- Run it with `bash run.sh sensor`. `bash run.sh test` checks it automatically.
+
+Status: verified in simulation with synthetic channel values. Reading a real sensor over I2C or SPI and an FPGA demo are the next steps.
